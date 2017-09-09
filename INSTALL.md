@@ -18,16 +18,18 @@ Then run the commands:
 ```shell
 $ composer create-project dan89/tab- maxu "master"
 $ cd maxu
+$ make build
+$ make up
+$ make perm
+$ make vendor
 $ composer setup
-$ composer test
-$ php bin/console fos:user:create --super-admin
-$ php bin/console server:run 127.0.0.1:8080 --env=prod
+$ docker-compose exec app bin/console fos:user:create --super-admin
 ```
 
 After sucessfully running all commands navigate to:
 
 ```
-http://127.0.0.1:8080
+http://localhost:8088
 ```
 
 ### Window notes
