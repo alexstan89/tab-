@@ -1030,7 +1030,7 @@ if (typeof NProgress != 'undefined') {
 	  
 		function init_select2() {
 			 
-			if( typeof (select2) === 'undefined'){ return; }
+			//if( typeof (select2) === 'undefined'){ return; }
 			console.log('init_toolbox');
 			 
 			$(".select2_single").select2({
@@ -1043,6 +1043,10 @@ if (typeof NProgress != 'undefined') {
 			  placeholder: "With Max Selection limit 4",
 			  allowClear: true
 			});
+
+			$(".select2-location-field").select2();
+
+			$(".select2-targeting-field").select2();
 			
 		};
 	   
@@ -1514,12 +1518,23 @@ if (typeof NProgress != 'undefined') {
 			  hide_min_max: true,
 			  keyboard: true,
 			  min: 0,
-			  max: 5000,
+			  max: 10000,
 			  from: 100,
 			  to: 10000,
 			  type: 'double',
 			  step: 1,
 			  prefix: "$",
+			  grid: true
+			});
+			$("#range2").ionRangeSlider({
+			  hide_min_max: true,
+			  keyboard: true,
+			  min: 0,
+			  max: 100,
+			  from: 0,
+			  to: 100,
+			  type: 'double',
+			  step: 1,
 			  grid: true
 			});
 			$("#range_25").ionRangeSlider({
