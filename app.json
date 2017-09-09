@@ -1,0 +1,33 @@
+{
+  "name": "MaxU",
+  "description": "A Symfony application which allows marketplace vendors to create campaigns. A campaign allows a vendor to place their offer first in eMAG website.",
+  "repository": "https://github.com/dan89/tab-",
+  "logo": "",
+  "keywords": ["symfony","admin","marketplace","campaign","vendor"],
+  "buildpacks": [
+    {
+      "url": "heroku/nodejs"
+    },
+    {
+      "url": "heroku/php"
+    }
+  ],
+  "env": {
+    "SYMFONY_ENV": {
+      "description": "Symfony run enviroment name",
+      "value": "prod"
+    },
+    "USER_NAME": {
+      "description": "User name",
+      "value": "admin"
+    },
+    "USER_PASSWORD": {
+      "description": "User password",
+      "generator": "secret"
+    },
+    "USER_EMAIL": {
+      "description": "User e-mail",
+      "value": ""
+    }
+  }
+}

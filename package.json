@@ -1,0 +1,9 @@
+{
+  "name": "Gentelella",
+  "dependencies": {
+    "bower": "^1.8.0"
+  },
+  "engines": {
+    "node": "4.1.1"
+  }
+}
