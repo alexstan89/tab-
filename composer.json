@@ -1,18 +1,20 @@
 {
-    "name": "krzysiekpiasecki/gentelella",
+    "name": "dan89/tab-",
     "description": "A Symfony skeleton application with user account functionality based on the Twitter Bootstrap and Gentelella template",
     "license": "MIT",
     "keywords": [
       "framework",
       "symfony",
-      "gentelella",
       "template",
       "bootstrap",
       "responsive",
       "admin",
       "user",
       "html",
-      "css"
+      "css",
+      "marketplace",
+      "campaign",
+      "seller"
     ],
     "type": "project",
     "autoload": {

@@ -1,0 +1,13 @@
+{% extends 'app/base.html.twig' %}
+
+{% block page_content %}
+    <h1>Campaigns list</h1>
+
+    {{ dump(campaigns) }}
+
+    <ul>
+        <li>
+            <a href="{{ path('campaign_new') }}">Create a new campaign</a>
+        </li>
+    </ul>
+{% endblock page_content %}
