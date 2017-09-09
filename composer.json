@@ -1,23 +1,26 @@
 {
-    "name": "krzysiekpiasecki/gentelella",
+    "name": "dan89/tab-",
     "description": "A Symfony skeleton application with user account functionality based on the Twitter Bootstrap and Gentelella template",
     "license": "MIT",
     "keywords": [
       "framework",
       "symfony",
-      "gentelella",
       "template",
       "bootstrap",
       "responsive",
       "admin",
       "user",
       "html",
-      "css"
+      "css",
+      "marketplace",
+      "campaign",
+      "seller"
     ],
     "type": "project",
     "autoload": {
         "psr-4": {
-            "AppBundle\\": "src/AppBundle"
+            "AppBundle\\": "src/AppBundle",
+            "AudienceBundle\\": "src/AudienceBundle"
         },
         "classmap": [
             "app/AppKernel.php",
@@ -41,7 +44,8 @@
         "sensio/distribution-bundle": "^5.0",
         "sensio/framework-extra-bundle": "^3.0.2",
         "incenteev/composer-parameter-handler": "^2.0",
-        "phing/phing": "^2.0"
+        "phing/phing": "^2.0",
+        "doctrine/doctrine-migrations-bundle": "^1.0"
     },
     "require-dev": {
         "sensio/generator-bundle": "^3.0",

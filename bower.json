@@ -1,11 +1,14 @@
 {
-  "name": "gentelella",
-  "homepage": "https://colorlib.com/polygon/gentelella/index.html",
+  "name": "dan89/tab-",
+  "homepage": "https://emag.ro",
   "authors": [
-    "Aigars Silkalns",
-    "Christian Esperar"
+    "Alexandru Porcescu",
+    "Alexandru Stan",
+    "Bogdan Rancichi",
+    "Mihai Pirvulet",
+    "Teodora Bucurescu"
   ],
-  "description": "Gentelella Admin is a free to use Bootstrap admin template",
+  "description": "A Symfony application which allows marketplace vendors to create campaigns. A campaign allows a vendor to place their offer first in eMAG website.",
   "keywords": [
     "css",
     "js",
