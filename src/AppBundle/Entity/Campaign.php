@@ -6,6 +6,7 @@ use AppBundle\Model\Gender;
 use AppBundle\Model\Product;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints\DateTime;
 
 /**
  * @ORM\Entity
@@ -65,15 +66,62 @@ class Campaign
     protected $status;
 
     /**
-     * @var integer
+     * @var DateTime
+     *
+     * @ORM\Column(type="datetime")
+     */
+    protected $dateStart;
+
+    /**
+     * @var DateTime
+     *
+     * @ORM\Column(type="datetime")
+     */
+    protected $dateEnd;
+
+    /**
+     * @var int
      *
      * @ORM\Column(type="integer", options={"unsigned": true})
      */
-    protected $reach;
+    protected $maxBid;
+
 
     public function __construct()
     {
         $this->products = new ArrayCollection();
+    }
+
+    /**
+     * @return DateTime
+     */
+    public function getDateStart()
+    {
+        return $this->dateStart;
+    }
+
+    /**
+     * @param DateTime $dateStart
+     */
+    public function setDateStart($dateStart)
+    {
+        $this->dateStart = $dateStart;
+    }
+
+    /**
+     * @return DateTime
+     */
+    public function getDateEnd()
+    {
+        return $this->dateEnd;
+    }
+
+    /**
+     * @param DateTime $dateEnd
+     */
+    public function setDateEnd($dateEnd)
+    {
+        $this->dateEnd = $dateEnd;
     }
 
     /**
