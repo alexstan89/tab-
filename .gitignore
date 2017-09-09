@@ -3,6 +3,7 @@
 /app/config/parameters_heroku.yml
 /build/
 build.xml
+docs
 /phpunit.xml
 /var/*
 !/var/cache
