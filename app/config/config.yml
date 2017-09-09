@@ -78,3 +78,10 @@ fos_user:
     from_email:
       address: you@example.com
       sender_name: You
+
+doctrine_migrations:
+    dir_name: "%kernel.root_dir%/DoctrineMigrations"
+    namespace: MaxU\Migrations
+    table_name: migration_versions
+    name: MaxU Application Migrations
+    organize_migrations: false
