@@ -46,16 +46,30 @@ class Campaign
     /**
      * @var int
      *
-     * @ORM\Column(type="smallint", options={"unsigned":true})
+     * @ORM\Column(type="smallint", options={"unsigned": true})
      */
     protected $stock;
 
     /**
      * @var Gender
      *
-     * @ORM\Column(type="smallint", length=1, options={"unsigned":true})
+     * @ORM\Column(type="smallint", length=1, options={"unsigned": true})
      */
     protected $gender;
+
+    /**
+     * @var bool
+     *
+     * @ORM\Column(type="boolean", options={"default": 1})
+     */
+    protected $status;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(type="integer", options={"unsigned": true})
+     */
+    protected $reach;
 
     public function __construct()
     {
@@ -80,6 +94,22 @@ class Campaign
         $this->id = $id;
 
         return $this;
+    }
+
+    /**
+     * @return boolean
+     */
+    public function isStatus()
+    {
+        return $this->status;
+    }
+
+    /**
+     * @param boolean $status
+     */
+    public function setStatus($status)
+    {
+        $this->status = $status;
     }
 
     /**
