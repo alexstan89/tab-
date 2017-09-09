@@ -240,26 +240,6 @@ class Campaign
         return $this;
     }
 
-    /**
-     * @return Gender
-     */
-    public function getGender()
-    {
-        return $this->gender;
-    }
-
-    /**
-     * @param Gender $gender
-     *
-     * @return Campaign
-     */
-    public function setGender($gender)
-    {
-        $this->gender = $gender;
-
-        return $this;
-    }
-
     public function addProduct(CampaignProduct $product)
     {
         $product->setCampaign($this);
