@@ -9,6 +9,7 @@ namespace AudienceBundle\Library\UserProfile\DataProvider;
 class Location extends Provider
 {
     public static $cities = [
+        'Bucuresti',
         'Constanta',
         'Iasi',
         'Timisoara',
