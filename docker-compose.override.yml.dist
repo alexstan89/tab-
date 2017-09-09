@@ -1,0 +1,27 @@
+version: "2"
+
+services:
+    app:
+        volumes:
+            - "~/.composer:/root/.composer"
+        ports:
+            - "8000:80"
+
+    rabbitmq:
+        ports:
+            - "15672:15672"
+
+    db:
+        ports:
+            - "3306:3306"
+
+    pma:
+        image: phpmyadmin/phpmyadmin
+        depends_on:
+            - db
+        environment:
+            PMA_HOST: db
+            PMA_USER: root
+            PMA_PASSWORD: root
+        ports:
+            - "8080:80"

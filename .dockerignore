@@ -1,0 +1,8 @@
+.gitignore
+.tmp
+docker-compose.yml
+node_modules
+tests
+var
+vendor
+web/app_dev.php
