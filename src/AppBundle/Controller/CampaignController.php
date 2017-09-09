@@ -35,6 +35,17 @@ class CampaignController extends Controller
     }
 
     /**
+     * Creates a new campaign.
+     *
+     * @Route("/new", name="campaign_create")
+     * @Method({"GET"})
+     */
+    public function createAction()
+    {
+        return $this->render('campaign/add.html.twig', []);
+    }
+
+    /**
      * Creates a new campaign entity.
      *
      * @Route("/create", name="campaign_new")
