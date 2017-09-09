@@ -63,6 +63,8 @@ RUN apt-get update -q && \
     tar xfvz /tmp/nodejs.tar.gz -C /usr/local --strip-components=1 && \
     rm -f /tmp/nodejs.tar.gz && \
 
+    npm install -g bower && \
+
     mkdir /run/php
 
 COPY php.ini /etc/php/7.1/cli/conf.d/50-setting.ini
