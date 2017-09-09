@@ -415,13 +415,14 @@ if (typeof NProgress != 'undefined') {
           series: {
             lines: {
               show: false,
-              fill: true
+              fill: false,
+              lineWidth:10
             },
             splines: {
               show: true,
               tension: 0.4,
-              lineWidth: 1,
-              fill: 0.4
+              lineWidth: 3,
+              fill: 0.1
             },
             points: {
               radius: 0,
@@ -453,7 +454,7 @@ if (typeof NProgress != 'undefined') {
             ticks: 8,
             tickColor: "rgba(51, 51, 51, 0.06)",
           },
-          tooltip: false
+          tooltip: false,
         }
 		
 		var chart_plot_02_settings = {
@@ -1357,7 +1358,7 @@ if (typeof NProgress != 'undefined') {
 		/* KNOB */
 	  
 		function init_knob() {
-		
+			
 				if( typeof ($.fn.knob) === 'undefined'){ return; }
 				console.log('init_knob');
 	
@@ -1514,8 +1515,8 @@ if (typeof NProgress != 'undefined') {
 			  keyboard: true,
 			  min: 0,
 			  max: 5000,
-			  from: 1000,
-			  to: 4000,
+			  from: 100,
+			  to: 10000,
 			  type: 'double',
 			  step: 1,
 			  prefix: "$",
