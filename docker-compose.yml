@@ -11,11 +11,15 @@ services:
             - .:/app
             - /app/var/cache
             - /app/var/sessions
+        ports:
+            - 8088:80
 
     db:
         image: mysql:5.7
         environment:
             MYSQL_ROOT_PASSWORD: root
+        ports:
+            - 3300:3306
 
     redis:
         image: redis:3.2

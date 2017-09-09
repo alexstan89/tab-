@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<project name="Gentelella" default="setup">
+<project name="MaxU" default="setup">
               
               <!-- ============================================  -->
               <!-- Target: setup                                 -->
@@ -16,7 +16,7 @@
                 <exec command="php bin/console doctrine:schema:create"/> 
                 
                 <echo msg="Installing assets" />
-                <exec command="bower install" passthru="true" />
+                <exec command="bower install --allow-root" passthru="true" />
                 <echo msg="Done ..." />
 
               </target>
