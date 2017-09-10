@@ -53,16 +53,4 @@ class DashboardController extends Controller
     {
         return $this->render('app/pages/dashboard.html.twig', []);
     }
-
-    /**
-     * @Route("/campaign/add", name="add_campaign")
-     *
-     * @param Request $request Request
-     *
-     * @return Response
-     */
-    public function addCampaignAction(Request $request)
-    {
-        return $this->render('app/pages/campaign/add.html.twig', []);
-    }
 }

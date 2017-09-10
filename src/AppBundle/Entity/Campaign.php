@@ -46,7 +46,7 @@ class Campaign
     /**
      * @var int
      *
-     * @ORM\Column(type="smallint", options={"unsigned":true})
+     * @ORM\Column(type="smallint", options={"unsigned": true})
      */
     protected $stock;
 
@@ -73,6 +73,22 @@ class Campaign
         $this->id = $id;
 
         return $this;
+    }
+
+    /**
+     * @return boolean
+     */
+    public function isStatus()
+    {
+        return $this->status;
+    }
+
+    /**
+     * @param boolean $status
+     */
+    public function setStatus($status)
+    {
+        $this->status = $status;
     }
 
     /**
