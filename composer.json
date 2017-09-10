@@ -20,7 +20,8 @@
     "autoload": {
         "psr-4": {
             "AppBundle\\": "src/AppBundle",
-            "AudienceBundle\\": "src/AudienceBundle"
+            "AudienceBundle\\": "src/AudienceBundle",
+            "ApiBundle\\": "src/ApiBundle"
         },
         "classmap": [
             "app/AppKernel.php",

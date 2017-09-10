@@ -16,6 +16,10 @@ security:
             pattern: ^/(_(profiler|wdt)|css|images|js)/
             security: false
 
+        api:
+            pattern: ^/api\/v1/
+            security: false
+
         main:
             anonymous: ~
 
@@ -49,4 +53,3 @@ security:
         - { path: ^/register, role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/resetting, role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/, role: ROLE_ADMIN }
-        

@@ -7,6 +7,7 @@
 
 namespace AppBundle\Controller;
 
+use ApiBundle\Service\PromotedProducts\Provider\FromDocId;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
