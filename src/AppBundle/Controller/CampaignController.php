@@ -63,7 +63,7 @@ class CampaignController extends Controller
         $em->persist($campaign);
         $em->flush();
 
-        return $this->redirectToRoute('campaign_index');
+        return $this->redirectToRoute('app_homepage');
     }
 
     /**

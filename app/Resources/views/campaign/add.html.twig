@@ -38,7 +38,7 @@
                   </div>
                   <div class="x_content">
                     <br />
-                    <form class="form-horizontal form-label-left col-md-10">
+                    <form class="form-horizontal form-label-left col-md-10" method="POST" action="{{ path('campaign_new') }}">
 
                       <div class="form-group">
                         <label class="control-label col-md-3 col-sm-3 col-xs-12">Name</label>
@@ -149,7 +149,6 @@
 
     <!-- Custom Theme Scripts -->
     <script src="{{ asset('assets/js/custom.js') }}"></script>
-    <script src="{{ asset('assets/js/campaign/add_campaign.js') }}"></script>
 
 {% endblock javascripts %}
 
