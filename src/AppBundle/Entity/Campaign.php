@@ -2,10 +2,9 @@
 
 namespace AppBundle\Entity;
 
-use AppBundle\Model\Gender;
-use AppBundle\Model\Product;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints\DateTime;
 
 /**
  * @ORM\Entity
@@ -50,9 +49,90 @@ class Campaign
      */
     protected $stock;
 
+    /**
+     * @var bool
+     *
+     * @ORM\Column(type="boolean", options={"default": 1})
+     */
+    protected $status;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(type="datetime")
+     */
+    protected $dateStart;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(type="datetime")
+     */
+    protected $dateEnd;
+
+    /**
+     * @var int
+     *
+     * @ORM\Column(type="integer", options={"unsigned": true})
+     */
+    protected $maxBid;
+
+    /**
+     * @return int
+     */
+    public function getMaxBid()
+    {
+        return $this->maxBid;
+    }
+
+    /**
+     * @param int $maxBid
+     */
+    public function setMaxBid($maxBid)
+    {
+        $this->maxBid = $maxBid;
+        return $this;
+    }
+
     public function __construct()
     {
         $this->products = new ArrayCollection();
+    }
+
+    /**
+     * @return \DateTime
+     */
+    public function getDateStart()
+    {
+        return $this->dateStart;
+    }
+
+    /**
+     * @param $dateStart
+     * @return $this
+     */
+    public function setDateStart($dateStart)
+    {
+        $this->dateStart = $dateStart;
+        return $this;
+    }
+
+    /**
+     * @return \DateTime
+     */
+    public function getDateEnd()
+    {
+        return $this->dateEnd;
+    }
+
+    /**
+     * @param $dateEnd
+     * @return $this
+     */
+    public function setDateEnd($dateEnd)
+    {
+        $this->dateEnd = $dateEnd;
+        return $this;
     }
 
     /**
@@ -66,7 +146,7 @@ class Campaign
     /**
      * @param int $id
      *
-     * @return Campaign
+     * @return $this
      */
     public function setId($id)
     {
@@ -102,7 +182,7 @@ class Campaign
     /**
      * @param string $name
      *
-     * @return Campaign
+     * @return $this
      */
     public function setName($name)
     {
