@@ -32,14 +32,13 @@ class CampaignRequestFactory
             ->setName($details['name'])
             ->setBudget($details['budget'])
             ->setStock($details['stock'])
-            ->setGender($details['gender'])
         ;
 
-        foreach ($details['products'] as $id => $product) {
+         foreach ($details['products'] as $id) {
             $campaign->addProduct(
-                (new CampaignProduct())->setProductId($product['id'])
+                (new CampaignProduct())->setProductId($id)
             );
-        }
+        } 
 
         return $campaign;
     }

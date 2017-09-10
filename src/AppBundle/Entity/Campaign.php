@@ -50,13 +50,6 @@ class Campaign
      */
     protected $stock;
 
-    /**
-     * @var Gender
-     *
-     * @ORM\Column(type="smallint", length=1, options={"unsigned":true})
-     */
-    protected $gender;
-
     public function __construct()
     {
         $this->products = new ArrayCollection();
@@ -158,26 +151,6 @@ class Campaign
     public function setStock($stock)
     {
         $this->stock = $stock;
-
-        return $this;
-    }
-
-    /**
-     * @return Gender
-     */
-    public function getGender()
-    {
-        return $this->gender;
-    }
-
-    /**
-     * @param Gender $gender
-     *
-     * @return Campaign
-     */
-    public function setGender($gender)
-    {
-        $this->gender = $gender;
 
         return $this;
     }

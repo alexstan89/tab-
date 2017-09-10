@@ -28,7 +28,7 @@ class CampaignController extends Controller
         $em = $this->getDoctrine()->getManager();
 
         $campaigns = $em->getRepository('AppBundle:Campaign')->findAll();
-        
+
         return $this->render('campaign/index.html.twig', array(
             'campaigns' => $campaigns,
         ));
@@ -40,7 +40,7 @@ class CampaignController extends Controller
      * @Route("/new", name="campaign_create")
      * @Method({"GET"})
      */
-    public function createAction()
+    public function newAction()
     {
         return $this->render('campaign/add.html.twig', []);
     }
@@ -51,7 +51,7 @@ class CampaignController extends Controller
      * @Route("/create", name="campaign_new")
      * @Method({"POST"})
      */
-    public function newAction(Request $request)
+    public function createAction(Request $request)
     {
         /** @var EntityManager $em */
         $em = $this->getDoctrine()->getManager();
