@@ -37,7 +37,7 @@ class CampaignRequestFactory
             ->setMaxBid(0)
             ->setStatus(1)
         ;
-
+         
          foreach ($details['products'] as $id) {
             $campaign->addProduct(
                 (new CampaignProduct())->setProductId($id)

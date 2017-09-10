@@ -557,7 +557,7 @@ if (typeof NProgress != 'undefined') {
 			
 			$.plot( $("#chart_plot_02"), 
 			[{ 
-				label: "Email Sent", 
+				label: "Campaign Views", 
 				data: chart_plot_02_data, 
 				lines: { 
 					fillColor: "rgba(150, 202, 89, 0.12)" 
@@ -1030,7 +1030,7 @@ if (typeof NProgress != 'undefined') {
 	  
 		function init_select2() {
 			 
-			//if( typeof (select2) === 'undefined'){ return; }
+			if( typeof (select2) === 'undefined'){ return; }
 			console.log('init_toolbox');
 			 
 			$(".select2_single").select2({
