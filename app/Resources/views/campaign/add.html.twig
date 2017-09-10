@@ -38,19 +38,19 @@
                   </div>
                   <div class="x_content">
                     <br />
-                    <form class="form-horizontal form-label-left col-md-10">
+                    <form class="form-horizontal form-label-left col-md-10" method="POST" action="{{ path('campaign_new') }}">
 
                       <div class="form-group">
                         <label class="control-label col-md-3 col-sm-3 col-xs-12">Name</label>
                         <div class="col-md-9 col-sm-9 col-xs-12">
-                          <input type="text" class="form-control" name="name" placeholder="Name..">
+                          <input type="text" class="form-control" name="campaign[name]" placeholder="Name..">
                         </div>
                       </div>
 
                       <div class="form-group">
                         <label class="control-label col-md-3 col-sm-3 col-xs-12">Product</label>
                         <div class="col-md-9 col-sm-9 col-xs-12">
-                          <select class="form-control">
+                          <select class="form-control" name="campaign[products][]">
                             <option value="">Choose option</option>
                             <option value="1">Product 1</option>
                             <option value="2">Product 2</option>
@@ -63,7 +63,7 @@
                       <div class="form-group">
                         <label class="control-label col-md-3 col-sm-3 col-xs-12">Budget </label>
                         <div class="col-md-9 col-sm-9 col-xs-12">
-                          <input type="text" id="range" value="" name="budget" />
+                          <input type="text" id="range" value="" name="campaign[budget]" />
                         </div>
                       </div>
 
@@ -71,16 +71,16 @@
                         <label class="control-label col-md-3 col-sm-3 col-xs-12">Stock <span class="required">*</span>
                         </label>
                         <div class="col-md-3 col-sm-3 col-xs-12">
-                          <input class="knob" data-width="100" data-height="120" data-min="0" data-max="10000" data-displayPrevious=false data-fgColor="#26B99A" value="0">
+                          <input class="knob" data-width="100" data-height="120" data-min="0" data-max="10000" data-displayPrevious=false data-fgColor="#26B99A" value="0" name="campaign[stock]">
                         </div>
 
-                        <div class="col-md-4">
+                        <div class="col-md-4 col-sm-4 col-xs-12" style="margin-top:20px">
                         Time Period
                             <div class="control-group vcenter">
                               <div class="controls">
                                 <div class="input-prepend input-group">
                                   <span class="add-on input-group-addon"><i class="glyphicon glyphicon-calendar fa fa-calendar"></i></span>
-                                  <input type="text" style="width: 200px" name="reservation" id="reservation" class="form-control" value="01/01/2016 - 01/25/2016" />
+                                  <input type="text" style="width: 200px" name="campaign[period]" id="reservation" class="form-control" value="01/01/2016 - 01/25/2016" name="campaign[period]"/>
                                 </div>
                               </div>
                             </div>
@@ -88,83 +88,10 @@
 
                       </div>
 
-                      <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Target Areas</label>
-                        <div class="col-md-9 col-sm-9 col-xs-12">
-                          <select class="select2_multiple form-control select2-location-field" tabindex="-1" multiple="multiple">
-                            <option value="AK">Alaska</option>
-                            <option value="HI">Hawaii</option>
-                            <option value="CA">California</option>
-                            <option value="NV">Nevada</option>
-                            <option value="OR">Oregon</option>
-                            <option value="WA">Washington</option>
-                            <option value="AZ">Arizona</option>
-                            <option value="CO">Colorado</option>
-                            <option value="ID">Idaho</option>
-                            <option value="MT">Montana</option>
-                            <option value="NE">Nebraska</option>
-                            <option value="NM">New Mexico</option>
-                            <option value="ND">North Dakota</option>
-                            <option value="UT">Utah</option>
-                            <option value="WY">Wyoming</option>
-                            <option value="AR">Arkansas</option>
-                            <option value="IL">Illinois</option>
-                            <option value="IA">Iowa</option>
-                            <option value="KS">Kansas</option>
-                            <option value="KY">Kentucky</option>    
-                            <option value="LA">Louisiana</option>
-                            <option value="MN">Minnesota</option>
-                            <option value="MS">Mississippi</option>
-                            <option value="MO">Missouri</option>
-                            <option value="OK">Oklahoma</option>
-                            <option value="SD">South Dakota</option>
-                            <option value="TX">Texas</option>
-                          </select>
-                        </div>
-                      </div>
-
-                      <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Age group </label>
-                        <div class="col-md-9 col-sm-9 col-xs-12">
-                          <input type="text" id="range2" value="" name="ageGroup" />
-                        </div>
-                      </div>
-
-                      <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12"> Gender <span class="required">*</span></label>
-                        <div class="col-md-9 col-sm-9 col-xs-12">
-                            <div class="radio">
-                                <label>
-                                  <input type="radio" class="flat" name="iCheck"> Male
-                                </label>
-                            </div>
-
-                            <div class="radio">
-                                <label>
-                                  <input type="radio" class="flat" name="iCheck"> Female
-                                </label>
-                            </div>
-                        </div>
-                       </div>
-
-                       <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Targeting</label>
-                        <div class="col-md-9 col-sm-9 col-xs-12">
-                          <select class="select2_multiple form-control select2-targeting-field" multiple="multiple">
-                            <option>Option one</option>
-                            <option>Option two</option>
-                            <option>Option three</option>
-                            <option>Option four</option>
-                            <option>Option five</option>
-                            <option>Option six</option>
-                          </select>
-                        </div>
-                      </div>
-
                       <div class="ln_solid"></div>
                       <div class="form-group">
                         <div class="col-md-9 col-sm-9 col-xs-12 col-md-offset-3">
-                          <button type="submit" class="btn btn-success">Submit</button>
+                          <button type="submit" id="submit-btn" class="btn btn-success">Submit</button>
                         </div>
                       </div>
 

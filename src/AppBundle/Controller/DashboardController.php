@@ -50,7 +50,13 @@ class DashboardController extends Controller
      * @return Response
      */
     public function homepageAction(Request $request)
-    {
-        return $this->render('app/pages/dashboard.html.twig', []);
+    {   
+        $em = $this->getDoctrine()->getManager();
+
+        $campaigns = $em->getRepository('AppBundle:Campaign')->findAll();
+
+        return $this->render('app/pages/dashboard.html.twig', [
+            'campaigns' => $campaigns
+        ]);
     }
 }
