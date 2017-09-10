@@ -1,8 +1,134 @@
-{% extends 'app/base.html.twig' %}
+{% extends "app/base.html.twig" %}
+
+{% block stylesheets %}
+
+    {{ parent() }}
+
+    <!-- iCheck -->
+    <link href="{{ asset('assets/vendors/iCheck/skins/flat/green.css') }}" rel="stylesheet">
+    <!-- bootstrap-progressbar -->
+    <link href="{{ asset('assets/vendors/bootstrap-progressbar/css/bootstrap-progressbar-3.3.4.min.css') }}" rel="stylesheet">
+    <!-- JQVMap -->
+    <link href="{{ asset('assets/vendors/jqvmap/dist/jqvmap.min.css') }}" rel="stylesheet"/>
+    
+{% endblock stylesheets %}
+
+{% block top_content_header %}{% endblock top_content_header%}
 
 {% block page_content %}
-    <h1>Campaign</h1>
+          
+		   <div class="title_left">
+		   		<h3> {{ campaign.name }} </h3>
+		   </div>
 
-   {{ dump(campaign) }}
+          <div class="row">
+          	<div class="animated flipInY col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                        <div class="tile-stats">
+                          <div class="icon"><i class="fa fa-usd"></i>
+                          </div>
+                          <div class="count">{{campaign.budget}}</div>
+
+                          <h3>Budget</h3>
+                          </br>	
+                        </div>
+            </div>
+
+            <div class="animated flipInY col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                        <div class="tile-stats">
+                          <div class="icon"><i class="fa fa-archive"></i>
+                          </div>
+                          <div class="count">{{campaign.stock}} pcs.</div>
+
+                          <h3>Stock</h3>
+                          </br>
+                        </div>
+            </div>
+
+            <div class="animated flipInY col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                        <div class="tile-stats">
+                          <div class="icon"><i class="fa fa-check-square"></i>
+                          </div>
+                          <div class="count">{% if campaign.status == 1%} Active {% else %} Inactive {% endif %}</div>
+
+                          <h3>Status</h3>
+                          </br>
+                        </div>
+            </div>
+
+          </div>
+
+          <div class="row">
+	          <div class="col-md-12 col-sm-12 col-xs-12">
+	                  <div id="chart_plot_01" class="demo-placeholder"></div>
+	          </div>
+      	  </div>
+      	  <br>
+      	  <div class="row">
+      	  	  <div class="col-md-3 col-sm-3 col-xs-12 col-md-offset-3 col-sm-offset-3">
+		          <div class="sidebar-widget">
+		                        <h4>Estimated Audience</h4>
+		                        <canvas width="150" height="80" id="chart_gauge_01" class="" style="width: 160px; height: 100px;"></canvas>
+		                        <div class="goal-wrapper">
+		                          <span id="gauge-text" class="gauge-value pull-left">0</span>
+		                        </div>
+		           </div>
+	           </div>
+
+	           <div class="col-md-3 col-sm-3 col-xs-12">
+		          <div class="sidebar-widget">
+		                        <h3> Start Date </h3> 
+		                        <p> {{campaign.dateStart|date("F j, Y")}} </p> <br>
+		                        <h3> End Date </h3> 
+		                        <p> {{campaign.dateEnd|date("F j, Y")}} </p>
+		           </div>
+	           </div>
+       	   </div>
+       	   <div class="row">
+       	   		<div class="col-md-12 col-sm-12 col-xs-12" style="height:280px">
+                        <div id="chart_plot_02" class="demo-placeholder"></div>
+                </div>
+       	   </div>
 
 {% endblock %}
+
+
+{% block javascripts %}
+    
+    {{ parent() }}
+
+
+    <!-- Chart.js -->
+    <script src="{{ asset('assets/vendors/Chart.js/dist/Chart.min.js') }}"></script>
+    <!-- gauge.js -->
+    <script src="{{ asset('assets/vendors/gauge.js/dist/gauge.min.js') }}"></script>
+    <!-- bootstrap-progressbar -->
+    <script src="{{ asset('assets/vendors/bootstrap-progressbar/bootstrap-progressbar.min.js') }}"></script>
+    <!-- iCheck -->
+    <script src="{{ asset('assets/vendors/iCheck/icheck.min.js') }}"></script>
+    <!-- Skycons -->
+    <script src="{{ asset('assets/vendors/skycons/skycons.js') }}"></script>
+    <!-- Flot -->
+    <script src="{{ asset('assets/vendors/flot/jquery.flot.js') }}"></script>
+    <script src="{{ asset('assets/vendors/flot/jquery.flot.pie.js') }}"></script>
+    <script src="{{ asset('assets/vendors/flot/jquery.flot.time.js') }}"></script>
+    <script src="{{ asset('assets/vendors/flot/jquery.flot.stack.js') }}"></script>
+    <script src="{{ asset('assets/vendors/flot/jquery.flot.resize.js') }}"></script>
+    <!-- Flot plugins -->
+    <script src="{{ asset('assets/vendors/flot.orderbars/js/jquery.flot.orderBars.js') }}"></script>
+    <script src="{{ asset('assets/vendors/flot-spline/js/jquery.flot.spline.min.js') }}"></script>
+    <script src="{{ asset('assets/vendors/flot.curvedlines/curvedLines.js') }}"></script>
+    <!-- DateJS -->
+    <script src="{{ asset('assets/vendors/DateJS/build/date.js') }}"></script>
+    <!-- JQVMap -->
+    <script src="{{ asset('assets/vendors/jqvmap/dist/jquery.vmap.js') }}"></script>
+    <script src="{{ asset('assets/vendors/jqvmap/dist/maps/jquery.vmap.world.js') }}"></script>
+    <script src="{{ asset('assets/vendors/jqvmap/examples/js/jquery.vmap.sampledata.js') }}"></script>
+    <!-- bootstrap-daterangepicker -->
+    <script src="{{ asset('assets/vendors/moment/min/moment.min.js') }}"></script>
+    <script src="{{ asset('assets/vendors/bootstrap-daterangepicker/daterangepicker.js') }}"></script>
+    <!-- easy-pie-chart -->
+    <script src="{{ asset('assets/vendors/jquery.easy-pie-chart/dist/jquery.easypiechart.min.js') }}"></script>
+    <!-- Custom Theme Scripts -->
+    <script src="{{ asset('assets/js/custom.js') }}"></script>
+
+{% endblock javascripts %}
