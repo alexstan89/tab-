@@ -32,7 +32,6 @@ class CampaignRequestFactory
             ->setName($details['name'])
             ->setBudget($details['budget'])
             ->setStock($details['stock'])
-            ->setGender($details['gender'])
         ;
 
         foreach ($details['products'] as $id => $product) {
